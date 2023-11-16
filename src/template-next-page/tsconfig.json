@@ -1,0 +1,24 @@
+{
+  "extends": "@minko-fe/tsconfig/tsconfig.project",
+  "compilerOptions": {
+    "incremental": true,
+    "target": "ES2015",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "preserve",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@root/*": ["./*"]
+    },
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "strict": false,
+    "skipLibCheck": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js", "src/**/*/js"],
+  "exclude": ["node_modules"]
+}

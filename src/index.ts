@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { blue, reset, yellow } from 'kolorist'
+import { blue, green, reset, yellow } from 'kolorist'
 import fs from 'node:fs'
 import path from 'node:path'
 import { cwd } from 'node:process'
@@ -13,6 +13,7 @@ function formatTargetDir(targetDir: string) {
 
 const renameFiles: Record<string, string | undefined> = {
   _gitignore: '.gitignore',
+  _git: '.git',
 }
 
 function pkgFromUserAgent(userAgent: string | undefined) {
@@ -49,12 +50,16 @@ type ColorFunc = (str: string | number) => string
 
 const TEMPLATES: { name: string; color: ColorFunc }[] = [
   {
-    name: 'react-ts',
+    name: 'react',
     color: blue,
   },
   {
-    name: 'react-i18n-ts',
+    name: 'react-i18n',
     color: yellow,
+  },
+  {
+    name: 'next-page',
+    color: green,
   },
 ]
 
@@ -84,7 +89,7 @@ async function init() {
         {
           type: 'select',
           name: 'template',
-          message: reset('Select a framework:'),
+          message: reset('Select a template:'),
           initial: 0,
           choices: TEMPLATES.map((template) => ({
             title: template.color(template.name),

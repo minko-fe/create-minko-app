@@ -1,0 +1,1 @@
+(function(){(function(){if(!(typeof window>"u"||typeof document>"u")){var n=document.createElement("script");n.src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js",document.body.append(n),n.addEventListener("load",function(){new window.VConsole})}})();})();

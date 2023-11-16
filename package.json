@@ -15,6 +15,10 @@
   },
   "author": "hemengke <https://github.com/hemengke1997>",
   "files": [
+    "!src/template-*/deno.lock",
+    "!src/template-*/dist",
+    "!src/template-*/node_modules",
+    "!src/template-*/pnpm-lock.yaml",
     "CHANGELOG.md",
     "dist",
     "src/template-*"
@@ -36,10 +40,6 @@
     "dev": "simple-git-hooks && tsup --watch",
     "build": "tsup",
     "build:pages": "pnpm run build && cd playground/spa && pnpm run build",
-    "test": "run-s test:unit test:serve test:build",
-    "test:unit": "vitest run",
-    "test:serve": "vitest run -c vitest.config.e2e.ts",
-    "test:build": "cross-env VITE_TEST_BUILD=1 vitest run -c vitest.config.e2e.ts",
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint .",
     "up": "taze -I -w -r",

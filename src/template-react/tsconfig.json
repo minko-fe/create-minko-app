@@ -1,0 +1,10 @@
+{
+  "extends": "@minko-fe/tsconfig/tsconfig.project",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["vite/client"]
+  }
+}
