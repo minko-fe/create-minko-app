@@ -1,22 +1,24 @@
 {
-  "name": "ts-template",
+  "name": "create-minko-app",
   "version": "0.0.0",
   "packageManager": "pnpm@8.10.5",
-  "description": "a template for typescript project or plugin",
+  "description": "create app cli",
   "type": "module",
   "keywords": [
-    "TODO"
+    "create app",
+    "cli"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hemengke1997/ts-template.git"
+    "url": "git+https://github.com/hemengke1997/create-minko-app.git"
   },
   "author": "hemengke <https://github.com/hemengke1997>",
   "files": [
     "CHANGELOG.md",
-    "README.md",
-    "dist"
+    "dist",
+    "index.js",
+    "template-*"
   ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -27,6 +29,9 @@
       "require": "./dist/index.cjs",
       "import": "./dist/index.js"
     }
+  },
+  "bin": {
+    "create-minko-app": "./dist/index.js"
   },
   "scripts": {
     "dev": "simple-git-hooks && tsup --watch",
@@ -42,11 +47,17 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "bump": "bumpp package.json -c -p -t --all -x \"pnpm run changelog\""
   },
+  "dependencies": {
+    "kolorist": "^1.8.0",
+    "prompts": "^2.4.2"
+  },
   "devDependencies": {
     "@commitlint/cli": "^18.4.1",
     "@minko-fe/commitlint-config": "^2.0.5",
     "@minko-fe/eslint-config": "^2.0.5",
     "@minko-fe/tsconfig": "^2.0.5",
+    "@types/node": "^18.14.4",
+    "@types/prompts": "^2.4.4",
     "bumpp": "^9.2.0",
     "conventional-changelog-cli": "^4.1.0",
     "cross-env": "^7.0.3",

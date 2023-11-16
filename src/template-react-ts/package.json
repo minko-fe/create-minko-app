@@ -1,0 +1,58 @@
+{
+  "name": "react-typescript-starter",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode production",
+    "build:test": "vite build --mode test",
+    "preview": "vite preview",
+    "predev": "husky install",
+    "report": "cross-env REPORT=true pnpm run build",
+    "up": "pnpm update --i --L",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --cache --fix"
+  },
+  "dependencies": {
+    "@ant-design/cssinjs": "^1.17.2",
+    "@minko-fe/axios-pro": "^0.1.14",
+    "@minko-fe/lodash-pro": "^0.1.14",
+    "@minko-fe/react-component": "^0.1.14",
+    "@minko-fe/react-hook": "^0.1.14",
+    "@minko-fe/react-route": "^0.1.14",
+    "@minko-fe/vite-config": "^0.1.14",
+    "antd": "^5.11.1",
+    "context-state": "^2.0.0",
+    "framer-motion": "^6.3.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-error-boundary": "^3.1.4",
+    "react-router-dom": "^6.10.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@minko-fe/commitlint-config": "^2.0.5",
+    "@minko-fe/eslint-config": "^2.0.5",
+    "@minko-fe/postcss-config": "^0.1.14",
+    "@minko-fe/tsconfig": "^2.0.5",
+    "@types/node": "^18.14.4",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.52.0",
+    "husky": "^8.0.1",
+    "lint-staged": "13.1.2",
+    "tailwindcss": "^3.2.7",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.9",
+    "vite-plugin-public-typescript": "^2.2.3"
+  },
+  "engines": {
+    "node": ">=16.18.0"
+  },
+  "lint-staged": {
+    "!(dist/**)/*.{js,jsx,ts,tsx}": "pnpm run lint-staged:js"
+  }
+}

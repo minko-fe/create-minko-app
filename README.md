@@ -1,6 +1,3 @@
-# ts-template
+# create-minko-app
 
-> a template for typescript project or plugin
-
-- branch `master` => single repo template
-- branch `monorepo` => monorepo template
+> Create a new app with a single command
