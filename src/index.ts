@@ -11,6 +11,10 @@ function formatTargetDir(targetDir: string) {
   return targetDir.trim().replace(/\/+$/g, '')
 }
 
+const renameFiles: Record<string, string | undefined> = {
+  _gitignore: '.gitignore',
+}
+
 function pkgFromUserAgent(userAgent: string | undefined) {
   if (!userAgent) return undefined
   const pkgSpec = userAgent.split(' ')[0]
@@ -113,10 +117,10 @@ async function init() {
 
   console.log(`\nScaffolding project in ${root}...`)
 
-  const templateDir = path.resolve(fileURLToPath(import.meta.url), '../..', `template-${template}`)
+  const templateDir = path.resolve(fileURLToPath(import.meta.url), '../../src/', `template-${template}`)
 
   const write = (file: string, content?: string) => {
-    const targetPath = path.join(root, file)
+    const targetPath = path.join(root, renameFiles[file] ?? file)
     if (content) {
       fs.writeFileSync(targetPath, content)
     } else {

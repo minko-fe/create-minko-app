@@ -17,8 +17,7 @@
   "files": [
     "CHANGELOG.md",
     "dist",
-    "index.js",
-    "template-*"
+    "src/template-*"
   ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
