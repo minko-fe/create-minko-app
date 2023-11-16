@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "init": "git init && husky install",
     "dev": "vite",
     "build": "vite build --mode production",
     "build:test": "vite build --mode test",
     "preview": "vite preview",
-    "predev": "husky install",
     "report": "cross-env REPORT=true pnpm run build",
     "up": "pnpm update --i --L",
     "lint-staged": "lint-staged",

@@ -1,5 +1,17 @@
 # Nextjs page router template
 
+## init
+
+```sh
+npm run init
+```
+
+## development
+
+```bash
+npm run dev
+```
+
 ## Docker部署
 
 ### 测试环境

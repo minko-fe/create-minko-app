@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "init": "git init && husky install",
     "dev": "cross-env NODE_ENV=development next dev",
     "build": "next build",
     "build_test": "cross-env NODE_ENV=test next build",
@@ -12,8 +13,7 @@
     "prebuild": "pnpm vite_build",
     "predev": "cross-env NODE_ENV=development pnpm vite_build",
     "prebuild_test": "cross-env NODE_ENV=test pnpm vite_build",
-    "preinstall": "npx only-allow pnpm",
-    "prepare": "husky install"
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.7.1",
