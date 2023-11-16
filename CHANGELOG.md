@@ -1,3 +1,12 @@
+## [0.0.5](https://github.com/hemengke1997/create-minko-app/compare/v0.0.4...v0.0.5) (2023-11-16)
+
+
+### Bug Fixes
+
+* cd target project ([779d2c2](https://github.com/hemengke1997/create-minko-app/commit/779d2c2f2644288523824558ec56bb32d7947bd8))
+
+
+
 ## [0.0.4](https://github.com/hemengke1997/create-minko-app/compare/v0.0.3...v0.0.4) (2023-11-16)
 
 
