@@ -1,3 +1,17 @@
+## [0.0.4](https://github.com/hemengke1997/create-minko-app/compare/v0.0.3...v0.0.4) (2023-11-16)
+
+
+### Bug Fixes
+
+* release ci ([c81dc67](https://github.com/hemengke1997/create-minko-app/commit/c81dc670ffa04d698d55bb2543181396d0470c14))
+
+
+### Features
+
+* auto init git on created ([9d68108](https://github.com/hemengke1997/create-minko-app/commit/9d68108287a62b29f9df052e998f755051f3c42d))
+
+
+
 ## [0.0.3](https://github.com/hemengke1997/create-minko-app/compare/v0.0.2...v0.0.3) (2023-11-16)
 
 
