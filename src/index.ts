@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import spawn from 'cross-spawn'
 import { blue, green, reset, yellow } from 'kolorist'
 import fs from 'node:fs'
 import path from 'node:path'
@@ -63,6 +64,16 @@ const TEMPLATES: { name: string; color: ColorFunc }[] = [
   },
 ]
 
+function generateGit() {
+  const existGit = fs.existsSync('.git')
+  if (existGit) {
+    return true
+  }
+  spawn.sync('git', ['init'], {
+    stdio: 'ignore',
+  })
+}
+
 async function init() {
   let result: prompts.Answers<'projectName' | 'template'>
 
@@ -117,6 +128,8 @@ async function init() {
     fs.mkdirSync(root, { recursive: true })
   }
 
+  process.chdir(root)
+
   const pkgInfo = pkgFromUserAgent(process.env.npm_config_user_agent)
   const pkgManager = pkgInfo ? pkgInfo.name : 'npm'
 
@@ -132,6 +145,8 @@ async function init() {
       copy(path.join(templateDir, file), targetPath)
     }
   }
+
+  generateGit()
 
   const files = fs.readdirSync(templateDir)
   for (const file of files.filter((f) => f !== 'package.json')) {

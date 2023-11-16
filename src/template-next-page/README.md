@@ -1,11 +1,5 @@
 # Nextjs page router template
 
-## init
-
-```sh
-npm run init
-```
-
 ## development
 
 ```bash

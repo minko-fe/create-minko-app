@@ -1,12 +1,5 @@
 # template-react
 
-## init
-
-```sh
-npm run init
-```
-
-
 ## development
 
 ```bash

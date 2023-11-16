@@ -1,11 +1,5 @@
 # template-react-i18n
 
-## init
-
-```sh
-npm run init
-```
-
 ## development
 
 ```sh
