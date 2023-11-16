@@ -4,9 +4,10 @@ import spawn from 'cross-spawn'
 import { blue, green, reset, yellow } from 'kolorist'
 import fs from 'node:fs'
 import path from 'node:path'
-import { cwd } from 'node:process'
 import { fileURLToPath } from 'node:url'
 import prompts from 'prompts'
+
+const cwd = process.cwd()
 
 function formatTargetDir(targetDir: string) {
   return targetDir.trim().replace(/\/+$/g, '')
@@ -122,7 +123,7 @@ async function init() {
   // user choice associated with prompts
   const { template } = result
 
-  const root = path.join(cwd(), targetDir)
+  const root = path.join(cwd, targetDir)
 
   if (!fs.existsSync(root)) {
     fs.mkdirSync(root, { recursive: true })
@@ -159,10 +160,10 @@ async function init() {
 
   write('package.json', `${JSON.stringify(pkg, null, 2)}\n`)
 
-  const cdProjectName = path.relative(cwd(), root)
+  const cdProjectName = path.relative(cwd, root)
 
   console.log(`\nDone. Now run:\n`)
-  if (root !== cwd()) {
+  if (root !== cwd) {
     console.log(`  cd ${cdProjectName.includes(' ') ? `"${cdProjectName}"` : cdProjectName}`)
   }
   switch (pkgManager) {
