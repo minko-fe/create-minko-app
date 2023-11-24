@@ -1,3 +1,12 @@
+## [0.0.6](https://github.com/hemengke1997/create-minko-app/compare/v0.0.5...v0.0.6) (2023-11-24)
+
+
+### Bug Fixes
+
+* tsc ([0af5aef](https://github.com/hemengke1997/create-minko-app/commit/0af5aef51d67f44c00510ddbdd4f2d5470bb0eb8))
+
+
+
 ## [0.0.5](https://github.com/hemengke1997/create-minko-app/compare/v0.0.4...v0.0.5) (2023-11-16)
 
 
