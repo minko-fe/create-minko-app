@@ -19,7 +19,11 @@ function getAll(record: Record<string, any>, keys: string[], locale: string) {
   return result
 }
 
-export async function getLocale(locale: string, namespaces: string | string[], alwaysContain: string | string[] = []) {
+export async function getLocale(
+  locale: string = FALLBACKLNG,
+  namespaces: string | string[],
+  alwaysContain: string | string[] = ['common'], // 所有页面都包含的翻译加在这里
+) {
   if (!Array.isArray(alwaysContain)) {
     alwaysContain = [alwaysContain]
   }

@@ -16,7 +16,7 @@
     "noEmit": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "strict": false,
+    "strict": true,
     "skipLibCheck": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js", "src/**/*/js"],

@@ -6,6 +6,7 @@ import Client from '@/components/Client'
 import TDK from '@/components/TDK'
 import GlobalContext from '@/contexts/GlobalContext'
 import { FALLBACKLNG, LOCALES } from '@/i18n/setting'
+import { type AppPropsFromServer } from '@/server/getServerSideProps'
 import WithTheme from '@/theme'
 import '@/assets/fonts/iconfont.css'
 import '@/assets/styles/globals.css'
@@ -19,25 +20,26 @@ type AppPropsWithLayout<P = PageProps> = AppProps<P> & {
   Component: NextPageWithLayout<P>
 }
 
-function getAlternates(url: string, basicUrl: string) {
+function getAlternates(url: string | undefined, basicUrl: string | undefined) {
   if (url === '/') {
     // index
     return LOCALES.map((lang) => ({
       lang,
-      href: `${basicUrl}/${lang}/`,
+      href: basicUrl ? `${basicUrl}/${lang}/` : `/${lang}/`,
     }))
   }
   return []
 }
 
-export default function App({ Component, pageProps }: AppPropsWithLayout) {
-  if (!pageProps.ctx) {
-    pageProps.ctx = {} as any
+export default function App({ Component, pageProps }: AppPropsWithLayout<AppPropsFromServer>) {
+  if (!pageProps?.ctx) {
+    pageProps = {} as any
+    pageProps!.ctx = {} as any
   }
 
   const getLayout = Component.getLayout ?? ((page) => page)
 
-  const alternates = getAlternates(pageProps.ctx._resolvedUrl, pageProps.ctx.basicUrl)
+  const alternates = getAlternates(pageProps!.ctx?._resolvedUrl, pageProps!.ctx?.basicUrl)
 
   return (
     <>
@@ -48,10 +50,11 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         />
         <meta name='renderer' content='webkit' />
         <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
-        {pageProps.ctx.resolvedUrl && <link rel='canonical' href={pageProps.ctx.resolvedUrl}></link>}
+        {pageProps!.ctx?.resolvedUrl && <link rel='canonical' href={pageProps!.ctx.resolvedUrl}></link>}
+
         {alternates.length ? (
           <>
-            <link rel='alternate' href={`${pageProps.ctx.basicUrl}/${FALLBACKLNG}/`} hrefLang='X-default' />
+            <link rel='alternate' href={`${pageProps!.ctx?.basicUrl}/${FALLBACKLNG}/`} hrefLang='X-default' />
             {alternates.map((alt, index) => (
               <link rel='alternate' href={alt.href} key={index} hrefLang={alt.lang} />
             ))}
@@ -59,13 +62,13 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         ) : null}
       </Head>
 
-      <TDK {...pageProps.tdk} />
+      <TDK {...pageProps?.tdk} />
 
-      <NextIntlProvider locale={pageProps.ctx.locale} messages={pageProps.messages}>
+      <NextIntlProvider locale={pageProps!.ctx?.locale} messages={pageProps?.messages}>
         <WithTheme>
-          <GlobalContext.Provider>{getLayout(<Component {...pageProps} />)}</GlobalContext.Provider>
+          <GlobalContext.Provider>{getLayout(<Component {...pageProps!} />)}</GlobalContext.Provider>
         </WithTheme>
-        <Client locale={pageProps.ctx.locale} messages={pageProps.messages} />
+        <Client locale={pageProps?.ctx?.locale} messages={pageProps?.messages} />
       </NextIntlProvider>
     </>
   )

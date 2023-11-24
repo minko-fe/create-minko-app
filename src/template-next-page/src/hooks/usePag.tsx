@@ -1,7 +1,6 @@
-import { last } from '@minko-fe/lodash-pro'
-import { useEffect } from 'react'
+import { useDocumentVisibility, useEffectOnce } from '@minko-fe/react-hook'
 
-type PagItem = { name: string; className?: string; repeat?: number }
+type PagItem = { id: string; name: string; className?: string; repeat?: number }
 
 type PagProps = {
   onPlay?: () => void
@@ -11,21 +10,24 @@ type PagProps = {
 export default function usePag(props: PagProps) {
   const { onPlay, onInit } = props
 
+  const docVisible = useDocumentVisibility()
+
   async function fetchPag(pagItem: PagItem) {
     try {
       const PAG = window.libpag._PAG || (await window.libpag.PAGInit())
       window.libpag._PAG = PAG
-      const { name, className, repeat } = pagItem
+      const { name, className, repeat, id } = pagItem
       const buffer = await fetch(`/pag/${name}.pag`).then((response) => response.arrayBuffer())
       const pagFile = await PAG.PAGFile.load(buffer)
-      const dom = last(name.split('/'))
-      const canvas = document.getElementById(dom) as HTMLCanvasElement
+      const canvas = document.getElementById(id) as HTMLCanvasElement
       if (canvas) {
         canvas.className = className || ''
       }
       if (!canvas) return
       const pagView = await PAG.PAGView.init(pagFile, canvas)
       pagView.setRepeatCount(repeat ?? 1)
+
+      if (docVisible === 'hidden') return
       await pagView.play()
       onPlay?.()
     } catch {}
@@ -43,7 +45,7 @@ export default function usePag(props: PagProps) {
     document.body.appendChild(pagScript)
   }
 
-  useEffect(() => {
+  useEffectOnce(() => {
     injectPagScript()
   }, [])
 }

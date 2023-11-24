@@ -2,7 +2,7 @@ import { AxiosPro, CONTENT_TYPE } from '@minko-fe/axios-pro'
 import Cookies from 'js-cookie'
 import { LOCALE_COOKIE, LOCALE_MAP } from '@/i18n/setting'
 import { isDev } from '@/utils/env'
-import { CLIENT_LANGUAGE, LOGIN_CREDENTIAL, UA } from './const'
+import { CLIENT_LANGUAGE, LOGIN_CREDENTIAL } from './const'
 
 const requestClient = new AxiosPro({
   withCredentials: true,
@@ -30,7 +30,7 @@ const requestClient = new AxiosPro({
       return config
     },
     async responseInterceptorsCatch(e) {
-      if (e.response.status === 401) {
+      if (e.response?.status === 401) {
         if (isDev()) return
 
         Cookies.remove(LOGIN_CREDENTIAL)

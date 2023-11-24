@@ -108,7 +108,7 @@ function getLocaleFromPathname(pathname: string) {
 }
 
 function getAcceptLanguageLocale(requestHeaders: Headers, locales: Array<string>, defaultLocale: string) {
-  let locale: string
+  let locale: string = ''
 
   const languages = new Negotiator({
     headers: {
@@ -130,7 +130,7 @@ function resolveLocaleFromPrefix(
   requestCookies: RequestCookies,
   pathname: string,
 ) {
-  let locale: string
+  let locale: string = ''
 
   // Prio 1: Use route prefix
   if (pathname) {

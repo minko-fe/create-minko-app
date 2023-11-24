@@ -1,5 +1,5 @@
 import { isBrowser } from '@minko-fe/lodash-pro'
-import { detect } from 'un-detector'
+import { device, os } from 'un-detector'
 
 function getUA() {
   let useragent = ''
@@ -12,9 +12,9 @@ function getUA() {
 }
 
 export const OS = {
-  isAndroid: () => detect(getUA()).isAndroid,
-  isIOS: () => detect(getUA()).isIOS,
-  isMac: () => detect(getUA()).isMac,
-  isWindows: () => detect(getUA()).isWindows,
-  isMobile: () => detect(getUA()).isMobile,
+  isAndroid: os.isAndroid(getUA()),
+  isIOS: () => os.isIOS(getUA()),
+  isMac: () => os.isMac(getUA()),
+  isWindows: () => os.isWindows(getUA()),
+  isMobile: () => device.isMobile(getUA()),
 }

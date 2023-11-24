@@ -18,7 +18,7 @@ const transform: AxiosTransform = {
 }
 
 function createRequest(opt?: Partial<CreateAxiosOptions>) {
-  return new AxiosPro(opt)
+  return new AxiosPro(opt || {})
 }
 
 export const request = createRequest({

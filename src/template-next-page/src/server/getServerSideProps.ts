@@ -19,7 +19,7 @@ export const DEFAULT_TDK = {
   keywords: 'keywords',
 }
 
-function convertNilToEmptyString<T = Record<string, any>>(obj: T | undefined): T | undefined {
+function convertNilToEmptyString<T = Record<string, any>>(obj: T | undefined): T | null {
   if (!obj) return null
   Object.keys(obj).forEach((k) => {
     if (isNil(obj[k])) {
@@ -35,10 +35,11 @@ export function _getServerSideProps(props: InServerSideProps) {
   let { tdk } = props
 
   return async function getServerSideProps(ctx: GetServerSidePropsContext) {
-    let xUrl: ReturnType<typeof parseUrl>
+    let xUrl: ReturnType<typeof parseUrl> = {} as any
+
     try {
       const nextRequestMeta =
-        ctx.req[Reflect.ownKeys(ctx.req).find((s) => String(s) === 'Symbol(NextInternalRequestMeta)')]
+        ctx.req[Reflect.ownKeys(ctx.req).find((s) => String(s) === 'Symbol(NextInternalRequestMeta)')!]
 
       xUrl = parseUrl(ctx.req.cookies[X_URL] || nextRequestMeta.__NEXT_INIT_URL || process.env.NEXT_PUBLIC_LAGO_MAIN)
     } catch (e) {
@@ -91,9 +92,9 @@ export function _getServerSideProps(props: InServerSideProps) {
 }
 
 type RemovePromise<T> = T extends Promise<infer U> ? U : T
-export type ServerSideProps<T extends Record<string, any> = Record<string, any>> = Omit<
-  RemovePromise<ReturnType<ReturnType<typeof _getServerSideProps>>>['props'],
-  'x'
-> & {
-  x?: T
+
+export type AppPropsFromServer = RemovePromise<ReturnType<ReturnType<typeof _getServerSideProps>>>['props']
+
+export type ServerSideProps<T extends Record<string, any> = Record<string, any>> = Omit<AppPropsFromServer, 'x'> & {
+  x: T
 }
