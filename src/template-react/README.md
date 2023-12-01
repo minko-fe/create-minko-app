@@ -1,4 +1,4 @@
-# template-react
+# template-react Via [create-minko-app](https://www.npmjs.com/package/create-minko-app)
 
 ## development
 

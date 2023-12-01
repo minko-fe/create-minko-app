@@ -1,4 +1,4 @@
-# template-react-i18n
+# template-react-i18n Via [create-minko-app](https://www.npmjs.com/package/create-minko-app)
 
 ## development
 

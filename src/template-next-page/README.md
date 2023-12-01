@@ -1,4 +1,4 @@
-# Nextjs page router template
+# Nextjs page router template Via [create-minko-app](https://www.npmjs.com/package/create-minko-app)
 
 ## development
 
