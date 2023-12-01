@@ -15,6 +15,7 @@
   },
   "author": "hemengke <https://github.com/hemengke1997>",
   "files": [
+    "!src/template-*/.turbo",
     "!src/template-*/deno.lock",
     "!src/template-*/dist",
     "!src/template-*/node_modules",

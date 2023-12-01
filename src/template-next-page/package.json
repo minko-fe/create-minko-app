@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development next dev",
-    "build": "next build",
+    "dev": "turbo next:dev",
+    "build": "turbo next:build",
+    "next:dev": "cross-env NODE_ENV=development next dev",
+    "next:build": "next build",
     "build_test": "cross-env NODE_ENV=test next build",
     "start": "next start",
     "lint": "eslint . --fix",
@@ -66,6 +68,7 @@
     "next-transpile-modules": "^10.0.1",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.0",
+    "turbo": "^1.10.16",
     "typescript": "5.0.3",
     "vite-plugin-public-typescript": "^2.2.3"
   },

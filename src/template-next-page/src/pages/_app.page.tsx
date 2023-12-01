@@ -9,8 +9,8 @@ import { FALLBACKLNG, LOCALES } from '@/i18n/setting'
 import { type AppPropsFromServer } from '@/server/getServerSideProps'
 import WithTheme from '@/theme'
 import '@/assets/fonts/iconfont.css'
-import '@/assets/styles/globals.css'
-import '@/assets/styles/tailwind.css'
+import '@/styles/globals.css'
+import '@/styles/tailwind.css'
 
 export type NextPageWithLayout<P = {}> = NextPage<P> & {
   getLayout?: (page: React.ReactElement) => React.ReactNode
