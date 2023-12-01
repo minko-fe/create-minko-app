@@ -19,19 +19,24 @@ function getAll(record: Record<string, any>, keys: string[], locale: string) {
   return result
 }
 
+function ensureArray<T>(value: T | T[]): T[] {
+  return Array.isArray(value) ? value : [value]
+}
+
 export async function getLocale(
   locale: string = FALLBACKLNG,
   namespaces: string | string[],
   alwaysContain: string | string[] = ['common'], // 所有页面都包含的翻译加在这里
 ) {
-  if (!Array.isArray(alwaysContain)) {
-    alwaysContain = [alwaysContain]
-  }
-  if (!Array.isArray(namespaces)) {
-    namespaces = [namespaces]
-  }
+  alwaysContain = ensureArray(alwaysContain)
+  namespaces = ensureArray(namespaces)
 
   const defaultLocale = require(`../locales/${FALLBACKLNG}.json`)
+
+  if (locale === FALLBACKLNG) {
+    return getAll(defaultLocale, [...alwaysContain, ...namespaces], locale)
+  }
+
   const currentLocale = require(`../locales/${locale}.json`)
 
   return deepMerge(
