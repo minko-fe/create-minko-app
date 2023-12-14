@@ -1,3 +1,17 @@
+## [0.0.8-beta.2](https://github.com/hemengke1997/create-minko-app/compare/v0.0.8-beta.1...v0.0.8-beta.2) (2023-12-14)
+
+
+### Bug Fixes
+
+* bugs ([981c778](https://github.com/hemengke1997/create-minko-app/commit/981c77820b1cfb89744fcf870985fc9d40405196))
+
+
+### Performance Improvements
+
+* **next:** getLocale ([4cca1f5](https://github.com/hemengke1997/create-minko-app/commit/4cca1f5cab0489e9706385caf4f37259ca0df303))
+
+
+
 ## [0.0.8-beta.1](https://github.com/hemengke1997/create-minko-app/compare/v0.0.8-beta.0...v0.0.8-beta.1) (2023-12-01)
 
 
