@@ -12,7 +12,3 @@ export const i18n: NonNullable<NextConfig['i18n']> = {
 }
 
 export const LOCALE_COOKIE = 'NEXT_LOCALE'
-
-export const LOCALE_MAP = {
-  ar: 'arabic',
-}

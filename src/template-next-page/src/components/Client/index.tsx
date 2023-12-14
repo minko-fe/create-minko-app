@@ -1,7 +1,7 @@
 import { Dialog, toast } from '@minko-fe/react-component'
 import { useIsomorphicLayoutEffect } from '@minko-fe/react-hook'
 import { NextIntlProvider } from 'next-intl'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { FALLBACKLNG } from '@/i18n/setting'
 import WithTheme from '@/theme'
 
@@ -12,7 +12,10 @@ export default function Client({ messages, locale }: { messages?: Record<string,
     toast.setDefaultOptions({
       keepOnHover: true,
     })
+    inited.current = true
+  }
 
+  useEffect(() => {
     Dialog.setDefaultOptions({
       overlay: true,
       render: (children) => (
@@ -21,9 +24,7 @@ export default function Client({ messages, locale }: { messages?: Record<string,
         </NextIntlProvider>
       ),
     })
-  }
-
-  inited.current = true
+  }, [messages, locale])
 
   useIsomorphicLayoutEffect(() => {
     if (window && window.resize) {

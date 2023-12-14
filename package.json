@@ -20,7 +20,6 @@
     "!src/template-*/dist",
     "!src/template-*/node_modules",
     "!src/template-*/pnpm-lock.yaml",
-    "CHANGELOG.md",
     "dist",
     "src/template-*"
   ],
@@ -54,9 +53,9 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.1",
-    "@minko-fe/commitlint-config": "^2.0.6",
-    "@minko-fe/eslint-config": "^2.0.6",
-    "@minko-fe/tsconfig": "^2.0.6",
+    "@minko-fe/commitlint-config": "^2.0.7",
+    "@minko-fe/eslint-config": "^2.0.7",
+    "@minko-fe/tsconfig": "^2.0.7",
     "@types/cross-spawn": "^6.0.5",
     "@types/node": "^18.14.4",
     "@types/prompts": "^2.4.4",

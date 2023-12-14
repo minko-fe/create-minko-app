@@ -3,7 +3,7 @@ import winston from 'winston'
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.combine(
-    winston.format.label({ label: 'LAGOFAST API LOG' }),
+    winston.format.label({ label: 'API LOG' }),
     winston.format.timestamp({
       format: 'YYYY-MM-DD HH:mm:ss',
     }),
