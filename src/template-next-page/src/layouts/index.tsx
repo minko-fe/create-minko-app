@@ -1,5 +1,5 @@
 import { isUndefined } from '@minko-fe/lodash-pro'
-import { type PropsWithChildren, type ReactNode } from 'react'
+import { type PropsWithChildren, type ReactNode, memo } from 'react'
 import DefaultFooter, { type FooterProps } from './components/Footer'
 import DefaultHeader, { type HeaderProps } from './components/Header'
 
@@ -26,4 +26,4 @@ const Layout = (props: LayoutProps) => {
   )
 }
 
-export { Layout }
+export default memo(Layout)

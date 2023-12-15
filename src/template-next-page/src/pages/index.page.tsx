@@ -1,15 +1,16 @@
 import { type GetServerSidePropsContext } from 'next'
 import { useTranslations } from 'next-intl'
+import Layouts from '@/layouts'
 import { _getServerSideProps } from '@/server/getServerSideProps'
 
 export default function Home() {
   const t = useTranslations()
 
   return (
-    <div>
+    <Layouts>
       <div>{t('home.test')}</div>
       <div>{t('common.test')}</div>
-    </div>
+    </Layouts>
   )
 }
 

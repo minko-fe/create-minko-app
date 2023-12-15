@@ -1,5 +1,9 @@
+import { memo } from 'react'
+
 export type HeaderProps = {}
 
-export default function Header(props: HeaderProps) {
+function Header(props: HeaderProps) {
   return <header>header</header>
 }
+
+export default memo(Header)

@@ -1,5 +1,9 @@
+import { memo } from 'react'
+
 export type FooterProps = {}
 
-export default function Footer(props: FooterProps) {
+function Footer(props: FooterProps) {
   return <footer>footer</footer>
 }
+
+export default memo(Footer)
