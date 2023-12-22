@@ -1,5 +1,6 @@
 import { Dialog, toast } from '@minko-fe/react-component'
 import { useIsomorphicLayoutEffect } from '@minko-fe/react-hook'
+import { useRouter } from 'next/router'
 import { NextIntlProvider } from 'next-intl'
 import { useEffect, useRef } from 'react'
 import { FALLBACKLNG } from '@/i18n/setting'
@@ -14,6 +15,11 @@ export default function Client({ messages, locale }: { messages?: Record<string,
     })
     inited.current = true
   }
+
+  const router = useRouter()
+  useEffect(() => {
+    router.prefetch = async () => {}
+  }, [router])
 
   useEffect(() => {
     Dialog.setDefaultOptions({

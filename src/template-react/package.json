@@ -31,7 +31,7 @@
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
     "react-router-dom": "^6.10.0",
-    "un-detector": "^0.0.5"
+    "un-detector": "^0.0.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.5.1",

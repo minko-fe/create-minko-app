@@ -1,7 +1,7 @@
 import { deepMerge, get, set } from '@minko-fe/lodash-pro'
 import colors from 'picocolors'
 import { isDev } from '@/utils/env'
-import { FALLBACKLNG } from './setting'
+import { FALLBACKLNG, LOCALE_PLACEHOLDER } from './setting'
 
 function getAll(record: Record<string, any>, keys: string[], locale: string) {
   const result: Record<string, any> = {}
@@ -33,7 +33,7 @@ export async function getLocale(
 
   const defaultLocale = require(`../locales/${FALLBACKLNG}.json`)
 
-  if (locale === FALLBACKLNG) {
+  if (locale === FALLBACKLNG || locale === LOCALE_PLACEHOLDER) {
     return getAll(defaultLocale, [...alwaysContain, ...namespaces], locale)
   }
 

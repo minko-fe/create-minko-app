@@ -1,12 +1,13 @@
 const path = require('node:path')
-const { LOCALES } = require('./src/i18n/locale')
+const { LOCALES, LOCALE_PLACEHOLDER } = require('./src/i18n/locale')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
   i18n: {
-    locales: ['default', ...LOCALES],
-    defaultLocale: 'default',
+    locales: [LOCALE_PLACEHOLDER, ...LOCALES],
+    defaultLocale: LOCALE_PLACEHOLDER,
+    localeDetection: true,
   },
   swcMinify: true,
   eslint: {

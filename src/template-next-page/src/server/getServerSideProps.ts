@@ -1,10 +1,8 @@
 import { assign, isNil, isString } from '@minko-fe/lodash-pro'
 import { type GetServerSidePropsContext } from 'next'
-import normalizeUrl from 'normalize-url'
 import parseUrl from 'parse-url'
 import { type TDKProps } from '@/components/TDK'
 import { getLocale } from '@/i18n'
-import { X_URL } from '@/service/const'
 
 type InServerSideProps = {
   messages: string[]
@@ -38,17 +36,13 @@ export function _getServerSideProps(props: InServerSideProps) {
     let xUrl: ReturnType<typeof parseUrl> = {} as any
 
     try {
-      const nextRequestMeta =
-        ctx.req[Reflect.ownKeys(ctx.req).find((s) => String(s) === 'Symbol(NextInternalRequestMeta)')!]
+      const protocol = ctx.req.headers['x-forwarded-proto']
+      const host = ctx.req.headers['host']
 
-      xUrl = parseUrl(ctx.req.cookies[X_URL] || nextRequestMeta.__NEXT_INIT_URL || process.env.NEXT_PUBLIC_LAGO_MAIN)
+      xUrl = parseUrl(`${protocol}://${host}/${ctx.locale}${ctx.resolvedUrl}`)
     } catch (e) {
       console.error(e)
     }
-
-    const basicUrl = `${xUrl.protocols}://${xUrl.resource}:${xUrl.port}`
-
-    const resolvedUrl = normalizeUrl(`${basicUrl}/${ctx.locale}/${ctx.resolvedUrl}` || ctx.resolvedUrl)
 
     if (auth) {
       const authorized = true // 自行检查权限
@@ -63,7 +57,7 @@ export function _getServerSideProps(props: InServerSideProps) {
     }
 
     try {
-      if (isString(tdk)) {
+      if (tdk && isString(tdk)) {
         tdk = {} // 可从后端请求tdk
       }
     } catch {}
@@ -74,9 +68,10 @@ export function _getServerSideProps(props: InServerSideProps) {
       props: {
         messages: await getLocale(ctx.locale, messages),
         ctx: convertNilToEmptyString({
-          _resolvedUrl: ctx.resolvedUrl,
-          resolvedUrl,
-          basicUrl,
+          pathname: xUrl.pathname,
+
+          /* ------------------ Nextjs ------------------ */
+          resolvedUrl: ctx.resolvedUrl,
           query: ctx.query,
           locale: ctx.locale,
           defaultLocale: ctx.defaultLocale,

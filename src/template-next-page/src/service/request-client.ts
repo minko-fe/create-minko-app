@@ -1,6 +1,6 @@
 import { AxiosPro, CONTENT_TYPE } from '@minko-fe/axios-pro'
 import Cookies from 'js-cookie'
-import { LOCALE_COOKIE, LOCALE_MAP } from '@/i18n/setting'
+import { LOCALE_COOKIE } from '@/i18n/setting'
 import { isDev } from '@/utils/env'
 import { CLIENT_LANGUAGE, LOGIN_CREDENTIAL } from './const'
 
@@ -24,7 +24,7 @@ const requestClient = new AxiosPro({
         config.headers![LOGIN_CREDENTIAL] = loginCredential
 
         const locale = Cookies.get(LOCALE_COOKIE) || ''
-        config.headers[CLIENT_LANGUAGE] = LOCALE_MAP[locale] || locale
+        config.headers[CLIENT_LANGUAGE] = locale
       } catch {}
 
       return config

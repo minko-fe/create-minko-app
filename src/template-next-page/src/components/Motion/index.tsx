@@ -1,10 +1,10 @@
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import { type PropsWithChildren } from 'react'
-import { useSm } from './useSm'
+import { useScreenSize } from '@/hooks/useScreenSize'
 
 export default function Motion(props: PropsWithChildren & { className?: string }) {
-  const { isSm } = useSm()
+  const { isSm } = useScreenSize()
   return (
     <motion.div
       initial={{ opacity: 0, translateY: isSm ? '36px' : '72px' }}
