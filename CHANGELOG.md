@@ -1,3 +1,12 @@
+## [0.0.8-beta.3](https://github.com/hemengke1997/create-minko-app/compare/v0.0.8-beta.2...v0.0.8-beta.3) (2023-12-22)
+
+
+### Bug Fixes
+
+* **next-page:** alternates and i18n ([68ae5d0](https://github.com/hemengke1997/create-minko-app/commit/68ae5d01ca01f2443cd8750a9e58659b60e4a7bd))
+
+
+
 ## [0.0.8-beta.2](https://github.com/hemengke1997/create-minko-app/compare/v0.0.8-beta.1...v0.0.8-beta.2) (2023-12-14)
 
 
