@@ -1,3 +1,12 @@
+## [0.0.8-beta.4](https://github.com/hemengke1997/create-minko-app/compare/v0.0.8-beta.3...v0.0.8-beta.4) (2024-01-09)
+
+
+### Bug Fixes
+
+* husky ([3710bdf](https://github.com/hemengke1997/create-minko-app/commit/3710bdf0f958ac6e8f21d9734709c0e20c612fd4))
+
+
+
 ## [0.0.8-beta.3](https://github.com/hemengke1997/create-minko-app/compare/v0.0.8-beta.2...v0.0.8-beta.3) (2023-12-22)
 
 

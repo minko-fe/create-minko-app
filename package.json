@@ -1,6 +1,6 @@
 {
   "name": "create-minko-app",
-  "version": "0.0.8-beta.3",
+  "version": "0.0.8-beta.4",
   "packageManager": "pnpm@8.10.5",
   "description": "create app cli",
   "type": "module",
