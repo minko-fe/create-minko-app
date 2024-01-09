@@ -9,7 +9,7 @@ const transform: AxiosTransform = {
 
     try {
       if (window.LoginCredential) {
-        config.headers!['Login-Credential'] = window.LoginCredential
+        config.headers['Login-Credential'] = window.LoginCredential
       }
     } catch {}
 

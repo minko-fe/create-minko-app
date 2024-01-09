@@ -13,20 +13,21 @@
     "report": "cross-env REPORT=true pnpm run build",
     "up": "pnpm update --i --L",
     "lint-staged": "lint-staged",
-    "lint-staged:js": "eslint --cache --fix"
+    "lint-staged:js": "eslint --cache --fix",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.17.2",
-    "@minko-fe/axios-pro": "^0.1.15",
-    "@minko-fe/lodash-pro": "^0.1.15",
-    "@minko-fe/react-component": "^0.1.15",
-    "@minko-fe/react-hook": "^0.1.15",
-    "@minko-fe/react-route": "^0.1.15",
-    "@minko-fe/vite-config": "^0.1.15",
+    "@minko-fe/axios-pro": "^0.1.16",
+    "@minko-fe/lodash-pro": "^0.1.16",
+    "@minko-fe/react-component": "^0.1.16",
+    "@minko-fe/react-hook": "^0.1.16",
+    "@minko-fe/react-route": "^0.1.16",
+    "@minko-fe/vite-config": "^0.1.16",
     "antd": "^5.11.1",
-    "context-state": "^2.0.0",
+    "context-state": "^2.1.0",
     "framer-motion": "^6.3.16",
-    "modern-flexible": "^0.0.7",
+    "modern-flexible": "^0.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
@@ -37,7 +38,7 @@
     "@commitlint/cli": "^17.5.1",
     "@minko-fe/commitlint-config": "^2.0.7",
     "@minko-fe/eslint-config": "^2.0.7",
-    "@minko-fe/postcss-config": "^0.1.15",
+    "@minko-fe/postcss-config": "^0.1.16",
     "@minko-fe/tsconfig": "^2.0.7",
     "@types/node": "^18.14.4",
     "@types/react": "^18.2.21",
@@ -47,11 +48,11 @@
     "eslint": "^8.52.0",
     "husky": "^8.0.1",
     "lint-staged": "13.1.2",
-    "tailwindcss": "^3.2.7",
+    "tailwindcss": "^3.4.0",
     "turbo": "^1.10.16",
     "typescript": "^5.0.2",
     "vite": "^4.4.9",
-    "vite-plugin-public-typescript": "^2.2.3"
+    "vite-plugin-public-typescript": "^2.2.5"
   },
   "engines": {
     "node": ">=16.18.0"
