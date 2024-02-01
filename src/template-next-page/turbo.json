@@ -1,10 +1,21 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "build": {
-      "outputs": [".next/**", "!.next/cache/**"]
+    "next:build": {
+      "outputs": [".next/**", "!.next/cache/**"],
+      "dependsOn": ["^next:build"]
     },
-    "dev": {
+    "next:build_test": {
+      "outputs": [".next/**", "!.next/cache/**"],
+      "dependsOn": ["^next:build_test"]
+    },
+    "turbo:lint-staged": {
+      "dependsOn": ["^turbo:lint-staged"]
+    },
+    "turbo:lint-staged:js": {
+      "dependsOn": ["^turbo:lint-staged:js"]
+    },
+    "next:dev": {
       "cache": false,
       "persistent": true
     }
