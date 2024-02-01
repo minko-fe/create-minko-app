@@ -1,3 +1,12 @@
+## [0.0.8](https://github.com/hemengke1997/create-minko-app/compare/v0.0.8-beta.4...v0.0.8) (2024-02-01)
+
+
+### Bug Fixes
+
+* turbo ([0fc8bb1](https://github.com/hemengke1997/create-minko-app/commit/0fc8bb1333a4f92b1140da5f7bdbc73a705982b1))
+
+
+
 ## [0.0.8-beta.4](https://github.com/hemengke1997/create-minko-app/compare/v0.0.8-beta.3...v0.0.8-beta.4) (2024-01-09)
 
 
