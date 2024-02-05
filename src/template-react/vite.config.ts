@@ -1,10 +1,9 @@
 import { injectScripts, overrideConfig } from '@minko-fe/vite-config'
-import { Env } from '@minko-fe/vite-config/client'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { publicTypescript } from 'vite-plugin-public-typescript'
 
-function setupScripts(mode: string) {
+function setupScripts(_mode: string) {
   const scripts: ReturnType<Parameters<typeof injectScripts>[0]> = []
 
   return injectScripts((manifest) => {

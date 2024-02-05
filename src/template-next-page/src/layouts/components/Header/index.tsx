@@ -2,7 +2,7 @@ import { memo } from 'react'
 
 export type HeaderProps = {}
 
-function Header(props: HeaderProps) {
+function Header() {
   return <header>header</header>
 }
 

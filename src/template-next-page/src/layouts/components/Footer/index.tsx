@@ -2,7 +2,7 @@ import { memo } from 'react'
 
 export type FooterProps = {}
 
-function Footer(props: FooterProps) {
+function Footer() {
   return <footer>footer</footer>
 }
 
