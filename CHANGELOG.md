@@ -1,3 +1,7 @@
+## [0.0.9](https://github.com/hemengke1997/create-minko-app/compare/v0.0.8...v0.0.9) (2024-02-05)
+
+
+
 ## [0.0.8](https://github.com/hemengke1997/create-minko-app/compare/v0.0.8-beta.4...v0.0.8) (2024-02-01)
 
 
