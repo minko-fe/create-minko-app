@@ -1,3 +1,12 @@
+## [0.0.10](https://github.com/hemengke1997/create-minko-app/compare/v0.0.9...v0.0.10) (2024-02-07)
+
+
+### Performance Improvements
+
+* update deps ([71412db](https://github.com/hemengke1997/create-minko-app/commit/71412dba3abb22ca9f1f70d6888e753eec3ea720))
+
+
+
 ## [0.0.9](https://github.com/hemengke1997/create-minko-app/compare/v0.0.8...v0.0.9) (2024-02-05)
 
 
