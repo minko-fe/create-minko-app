@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import spawn from 'cross-spawn'
-import { blue, green, reset, yellow } from 'kolorist'
+import { blue, green, red, reset, yellow } from 'kolorist'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -62,6 +62,10 @@ const TEMPLATES: { name: string; color: ColorFunc }[] = [
   {
     name: 'next-page',
     color: green,
+  },
+  {
+    name: 'astro',
+    color: red,
   },
 ]
 
