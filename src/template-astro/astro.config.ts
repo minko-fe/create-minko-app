@@ -24,12 +24,9 @@ export default defineConfig({
     },
     plugins: [
       publicTypescript({
-        manifestName: 'manifest-publicTs',
-        inputDir: 'publicTs',
         outputDir: '/lib',
-        esbuildOptions: {
-          target: 'es2015',
-        },
+        destination: 'file',
+        babel: true,
       }),
     ],
   },

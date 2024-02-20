@@ -1,7 +1,10 @@
 node_modules
+dist
+public/lib
+
 .DS_Store
 .cache
-dist
+
 
 .local
 # local env files

@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build:test": "astro check && astro build --mode production",
-    "build:prod": "astro check && astro build --mode test",
+    "build:test": "astro check && astro build --mode test",
+    "build:prod": "astro check && astro build --mode production",
     "preview": "astro preview",
     "report": "cross-env REPORT=true pnpm run build",
     "up": "pnpm update --i --L",
@@ -32,7 +32,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.3.3",
-    "vite-plugin-public-typescript": "1.2.3"
+    "vite-plugin-public-typescript": "2.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.6.1",
@@ -52,7 +52,7 @@
     "tailwindcss": "^3.4.1"
   },
   "engines": {
-    "node": ">=18.0.0 <=20.0.0"
+    "node": ">=18.0.0"
   },
   "lint-staged": {
     "*": [

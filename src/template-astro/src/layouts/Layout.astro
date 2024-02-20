@@ -1,6 +1,6 @@
 ---
 import { getLibAssets } from '@root/shared'
-import manifestPublicTs from '../../publicTs/manifest-publicTs.json'
+import { getManifest } from 'vite-plugin-public-typescript'
 import '@/assets/css/index.css'
 
 export interface Props {
@@ -33,7 +33,7 @@ const { tdk } = Astro.props
     <meta name='og:title' content={tdk.title} />
     <meta property='og:title' content={tdk.title} />
     <title>{tdk.title}</title>
-    <script is:inline src={getLibAssets(manifestPublicTs.flexible)}></script>
+    <script is:inline src={getLibAssets(getManifest()['flexible'])}></script>
   </head>
   <body>
     <div style='width: 100%;position:relative;min-height: 100vh;'>

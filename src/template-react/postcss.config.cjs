@@ -14,7 +14,7 @@ module.exports = {
         return file.includes('node_modules/antd') || file.includes('node_modules/@minko-fe/react-component')
       },
       convertUnitOnEnd: {
-        sourceUnit: /[Pp][Xx]$/,
+        sourceUnit: /px$/i,
         targetUnit: 'px',
       },
     },

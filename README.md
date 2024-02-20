@@ -13,10 +13,10 @@ pnpm create minko-app
 - next-page
 - react-i18n
 - react
+- astro
 
 所有模板默认支持pxtorem，若不需要，请自行删除 `flexible.ts` 和 `postcss.config.js` 中的相关配置
 
 ## 待支持
 
-- astro
 - vue3
