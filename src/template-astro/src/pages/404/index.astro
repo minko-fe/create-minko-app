@@ -1,0 +1,58 @@
+---
+import Layout from '@/layouts/Layout.astro'
+
+const tdk = {
+  title: 'GI加速器-终生免费加速器【官方网站】',
+  description:
+    'GI加速器,不充钱/不排队/24小时免费,支持千款游戏加速,超低延迟与超高性价比,给你不一样的加速体验。GI在手,极速我有！',
+  keywords:
+    '游戏加速器,免费加速器,免费游戏加速器,加速器哪个免费,不收费加速器,steam加速器,魔兽世界怀旧服加速器,战网国际服加速器,Apex英雄加速器,COD加速器,王权与自由加速器,蓝色协议加速器,PBE加速器',
+}
+---
+
+<Layout tdk={tdk}>
+  <main>
+    <article class='w-full flex items-start flex-col justify-center'>
+      <div class='container-bg'>
+        <section class='absolute top-[265px] right-[37px]'>
+          <h1 class='text'
+            >未找到您要访问的页面<br />
+            请核对您输入的地址是否正确哦</h1
+          >
+          <a href='/' class='back-btn'>返回首页</a>
+        </section>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .container-bg {
+    background: url(./images/404_bg.png) no-repeat;
+    background-size: 100% 100%;
+    width: 1507px;
+    height: 698px;
+    position: relative;
+  }
+
+  .text {
+    font-size: 24px;
+    font-weight: 200;
+    color: #ffffff;
+    line-height: 44px;
+  }
+
+  .back-btn {
+    margin-top: 40px;
+    display: block;
+    width: 138px;
+    height: 48px;
+    background: #2969ff;
+    border-radius: 24px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 48px;
+    text-align: center;
+  }
+</style>

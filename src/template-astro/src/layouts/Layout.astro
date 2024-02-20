@@ -1,0 +1,59 @@
+---
+import { getLibAssets } from '@root/shared'
+import manifestPublicTs from '../../publicTs/manifest-publicTs.json'
+import '@/assets/css/index.css'
+
+export interface Props {
+  tdk: {
+    title: string
+    keywords: string
+    description: string
+  }
+}
+
+const { tdk } = Astro.props
+---
+
+<!doctype html>
+<html lang='zh-CN'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='theme-color' content='#12141d' />
+    <meta http-equiv='Cache-Control' content='no-store' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.ico' />
+    <meta name='baidu-site-verification' content='codeva-24pTjHgbQA' />
+    <meta name='generator' content={Astro.generator} />
+    <meta name='description' content={tdk.description} />
+    <meta property='description' content={tdk.description} />
+    <meta name='og:description' content={tdk.description} />
+    <meta property='og:description' content={tdk.description} />
+    <meta name='keywords' content={tdk.keywords} />
+    <meta name='page_title' content={tdk.title} />
+    <meta property='page_title' content={tdk.title} />
+    <meta name='og:title' content={tdk.title} />
+    <meta property='og:title' content={tdk.title} />
+    <title>{tdk.title}</title>
+    <script is:inline src={getLibAssets(manifestPublicTs.flexible)}></script>
+  </head>
+  <body>
+    <div style='width: 100%;position:relative;min-height: 100vh;'>
+      <slot />
+    </div>
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+  }
+  body {
+    min-width: 120rem;
+  }
+
+  @media (min-width: 1300px) {
+    body {
+      overflow-x: hidden;
+    }
+  }
+</style>

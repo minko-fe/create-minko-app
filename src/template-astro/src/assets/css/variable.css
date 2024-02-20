@@ -1,0 +1,9 @@
+:root {
+  --primary-color: #2969ff;
+  --error-color: #ff6a55;
+  --link-color: #2969ff;
+  --green-color: #17b83c;
+  --rc-dialog-content-padding: 20px 24px;
+  --rc-dialog-background-color: #242731;
+  --rc-popup-close-icon-color: rgba(255, 255, 255, 0.4);
+}
