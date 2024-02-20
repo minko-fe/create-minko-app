@@ -1,3 +1,18 @@
+## [0.0.12](https://github.com/hemengke1997/create-minko-app/compare/v0.0.11...v0.0.12) (2024-02-20)
+
+
+### Bug Fixes
+
+* modify tdk and meta ([61e7aac](https://github.com/hemengke1997/create-minko-app/commit/61e7aac44f4170cfce312df4e20c5f8616043682))
+
+
+### Features
+
+* add astro template ([0ea631b](https://github.com/hemengke1997/create-minko-app/commit/0ea631bf04d45216ec713315744dcaaba3fe619c))
+* astro ([4959cea](https://github.com/hemengke1997/create-minko-app/commit/4959cea7b5178f1a7bbdf4cb683372976892d2fc))
+
+
+
 ## [0.0.11](https://github.com/hemengke1997/create-minko-app/compare/v0.0.10...v0.0.11) (2024-02-18)
 
 
