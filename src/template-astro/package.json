@@ -6,13 +6,15 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build:test": "astro check && astro build --mode test",
-    "build:prod": "astro check && astro build --mode production",
+    "build": "astro check && astro build --mode production",
     "preview": "astro preview",
     "report": "cross-env REPORT=true pnpm run build",
     "up": "pnpm update --i --L",
     "postinstall": "husky install",
     "lint-staged": "lint-staged",
-    "astro": "astro"
+    "lint-staged:js": "eslint . --cache --fix",
+    "astro": "astro",
+    "devToolbar": "astro preferences disable devToolbar"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.4",
@@ -49,17 +51,13 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "normalize-path": "^3.0.0",
+    "prettier-plugin-astro": "^0.13.0",
     "tailwindcss": "^3.4.1"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "lint-staged": {
-    "*": [
-      "prettier --write --cache --ignore-unknown --plugin-search-dir=. ."
-    ],
-    "!(dist/**)/*.{js,jsx,ts,tsx,astro}": [
-      "eslint --cache --fix"
-    ]
+    "!(dist/**)/*.{js,jsx,ts,tsx,astro}": "npm run lint-staged:js"
   }
 }
