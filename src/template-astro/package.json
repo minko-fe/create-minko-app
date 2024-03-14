@@ -6,12 +6,13 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build:test": "astro check && astro build --mode test",
-    "build:prod": "astro check && astro build --mode production",
+    "build": "astro check && astro build --mode production",
     "preview": "astro preview",
     "report": "cross-env REPORT=true pnpm run build",
     "up": "pnpm update --i --L",
     "postinstall": "husky install",
     "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint . --cache --fix",
     "astro": "astro",
     "devToolbar": "astro preferences disable devToolbar"
   },
@@ -57,11 +58,6 @@
     "node": ">=18.0.0"
   },
   "lint-staged": {
-    "*": [
-      "prettier --write --cache --ignore-unknown --plugin-search-dir=. ."
-    ],
-    "!(dist/**)/*.{js,jsx,ts,tsx,astro}": [
-      "eslint --cache --fix"
-    ]
+    "!(dist/**)/*.{js,jsx,ts,tsx,astro}": "npm run lint-staged:js"
   }
 }

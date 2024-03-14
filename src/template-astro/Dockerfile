@@ -12,7 +12,12 @@ RUN \
   fi
 
 ARG NODE_ENV
-RUN npm run build:$NODE_ENV
+ENV NODE_ENV=${NODE_ENV}
+
+RUN \
+	if [ "${NODE_ENV}" == "test" ]; then npm run build:test;\
+	else npm run build; \
+	fi
 
 ENV HOST=0.0.0.0
 ENV PORT=3000
