@@ -1,0 +1,16 @@
+**/*.svg
+**/*.ico
+/dist
+.DS_Store
+.eslintignore
+*.png
+.editorconfig
+.gitignore
+.prettierignore
+LICENSE
+*.lock
+*.yaml
+yarn-error.log
+server/*.js
+public/*
+dist/*
