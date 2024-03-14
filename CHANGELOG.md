@@ -1,3 +1,13 @@
+## [0.0.13](https://github.com/hemengke1997/create-minko-app/compare/v0.0.12...v0.0.13) (2024-03-14)
+
+
+### Bug Fixes
+
+* remove prettier ([e3ada9a](https://github.com/hemengke1997/create-minko-app/commit/e3ada9a68e3ad66d81aaba3864ccb3492688a62f))
+* tailwind, dockerfile file configuration ([bb4c3c4](https://github.com/hemengke1997/create-minko-app/commit/bb4c3c4cde2a490d23eb1a6b8259661639139314))
+
+
+
 ## [0.0.12](https://github.com/hemengke1997/create-minko-app/compare/v0.0.11...v0.0.12) (2024-02-20)
 
 
