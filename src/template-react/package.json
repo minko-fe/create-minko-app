@@ -39,9 +39,9 @@
   "devDependencies": {
     "@commitlint/cli": "^17.8.1",
     "@minko-fe/commitlint-config": "^2.0.7",
-    "@minko-fe/eslint-config": "^2.1.2",
+    "@minko-fe/eslint-config": "^2.2.1",
     "@minko-fe/postcss-config": "^0.1.21",
-    "@minko-fe/tsconfig": "^2.0.7",
+    "@minko-fe/tsconfig": "^2.0.8",
     "@types/node": "^18.19.17",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",

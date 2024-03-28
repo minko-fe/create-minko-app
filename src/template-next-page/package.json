@@ -54,9 +54,9 @@
   "devDependencies": {
     "@commitlint/cli": "^17.8.1",
     "@minko-fe/commitlint-config": "^2.0.7",
-    "@minko-fe/eslint-config": "^2.1.2",
+    "@minko-fe/eslint-config": "^2.2.1",
     "@minko-fe/postcss-config": "^0.1.21",
-    "@minko-fe/tsconfig": "^2.0.7",
+    "@minko-fe/tsconfig": "^2.0.8",
     "@types/crypto-js": "^4.2.2",
     "@types/js-cookie": "^3.0.6",
     "@types/negotiator": "^0.6.3",

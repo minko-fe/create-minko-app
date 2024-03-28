@@ -6,9 +6,12 @@ import { publicTypescript } from 'vite-plugin-public-typescript'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind({
-    nesting: true
-  })],
+  integrations: [
+    react(),
+    tailwind({
+      nesting: true,
+    }),
+  ],
   adapter: node({
     mode: 'standalone',
   }),
